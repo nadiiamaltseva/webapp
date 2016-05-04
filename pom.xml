@@ -15,19 +15,7 @@
 		<org.slf4j-version>1.7.12</org.slf4j-version>
 	</properties>
 	
-	<distributionManagement>
-            <repository>
-              <id>deployment</id>
-              <name>Releases</name>
-              <url>http://127.0.0.1:8081/nexus/content/repositories/releases</url>
-            </repository>
-            <snapshotRepository>
-              <id>deployment</id>
-              <name>Snapshots</name>
-              <url>http://127.0.0.1:8081/nexus/content/repositories/snapshots</url>
-            </snapshotRepository>
-        </distributionManagement>
-        
+	
 	<dependencies>
 		<!-- Spring -->
 		<dependency>
@@ -312,16 +300,19 @@
 					</webApp>
 				</configuration>
 			</plugin>
-			<plugin>
-                                <groupId>org.sonatype.plugins</groupId>
-                                <artifactId>nexus-staging-maven-plugin</artifactId>
-                                <version>1.6.6</version>
-                                <extensions>true</extensions>
-                                <configuration>
-                                         <serverId>deployment</serverId>
-                                         <nexusUrl>http://localhost:8081/nexus/</nexusUrl>
-                                </configuration>
-                        </plugin>
+			
 		</plugins>
 	</build>
+	<distributionManagement>
+            <repository>
+              <id>deployment</id>
+              <name>Releases</name>
+              <url>http://127.0.0.1:8081/nexus/content/repositories/releases</url>
+            </repository>
+            <snapshotRepository>
+              <id>deployment</id>
+              <name>Snapshots</name>
+              <url>http://127.0.0.1:8081/nexus/content/repositories/snapshots</url>
+            </snapshotRepository>
+        </distributionManagement>
 </project>
